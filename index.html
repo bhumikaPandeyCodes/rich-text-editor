@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FONT AWSOME ICON LINK -->
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="index.css">
+    <title>Text Editor</title>
+</head>
+<body>
+    <div class="container">
+    <div class="title">Rich Text Editor</div>
+    <div class="editor">
+        <div class="edit-box">
+            <select onchange="changeFont()" name="font-type" id="font-type" class="font-type font">
+                <option value="Arial">Arial</option>
+                <option value="Algerian">Algerian</option>
+                <option value="Courier New">Courier New</option>
+                <option value="cursive">cursive</option>
+                <option value="Garamond">Garamond</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Castellar">Castellar</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Baskerville Old Face">Baskerville Old Face</option>
+            </select>
+            <select onchange="changeFontSize()" id="font-size" class="font-size font">
+                <option value=10>10</option>
+                <option value=12>12</option>
+                <option value=14>14</option>
+                <option value=16>16</option>
+                <option value=18>18</option>
+                <option value=20>20</option>
+                <option value=22>22</option>
+            </select>
+            <button name="unordered" onclick="addList(this)" class="unordered-list-btn btn">
+                <i class="fa-solid fa-list"></i>
+            </button>
+            <button name="ordered" onclick="addList(this)" class="ordered-list-btn btn">
+                <i class="fa-solid fa-list-ol"></i>
+            </button>
+            <button name="justify" onclick="editalign(this)" class="justify-align-btn btn">
+                <i class="fa-solid fa-align-justify"></i>
+            </button>
+            <button name="left" onclick="editalign(this)" class="left-align-btn btn">
+                <i class="fa-solid fa-align-left"></i>
+            </button>
+            <button name="right" onclick="editalign(this)" class="right-align-btn btn">
+                <i class="fa-solid fa-align-right"></i>
+            </button>
+            <button name="center" onclick="editalign(this)" class="center-align-btn btn">
+                <i class="fa-solid fa-align-center"></i>
+            </button>
+            <button onclick="addBold()" class="bold-btn btn">
+                <i class="fa-solid fa-bold"></i>
+            <button onclick="addItalic()" class="italic-btn btn">
+                <i class="fa-solid fa-italic"></i>
+            </button>
+            <button name="underline" onclick="addTextDeco(this)" class="underline-btn btn">
+                <i class="fa-solid fa-underline"></i>
+            </button>
+            <button name="line-through" onclick="addTextDeco(this)" class="strike-through-btn btn">
+                <i class="fa-solid fa-strikethrough"></i>
+            </button>
+            <input type="color" onchange="colorChange()" class="color">
+            <label for="color" class="label-color">Font Color</label>
+
+        </div>
+        <div class="text-box">
+            <div contenteditable="true" name="textarea" id="input-area" class="input-area">
+            </div>
+        </div>
+    </div>
+     <button class="savebtn">Save</button>
+</div>
+
+    <script src="index.js"></script>
+</body>
+</html>
